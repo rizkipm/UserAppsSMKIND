@@ -5,8 +5,8 @@ package superheroku.id.co.appuseridn.helper;
  */
 
 public class MyConstant {
-    public static final String BASE_URL = "http://profil.smsberjaya.id/";
-    public static final String BASE_URL2 = "http://192.168.100.4/api_serverkolaka/index.php/api/";
+    public static final String BASE_URL = "http://192.168.100.4/ServerSekolahIDN/index.php/api/";
+    public static final String BASE_URL2 = "http://192.168.100.4/ServerSekolahIDN/index.php/api/";
 
 //    public static final String BASE_URL2 = "http://profil.smsberjaya.id/index.php/api/";
 //    public static final String BASE_URL = "http://192.168.1.13/TokoVendorWeb/index.php/api/";
