@@ -6,13 +6,13 @@ package superheroku.id.co.appuseridn.helper;
 
 public class MyConstant {
     public static final String BASE_URL = "http://profil.smsberjaya.id/";
-//    public static final String BASE_URL2 = "http://192.168.100.4/api_serverkolaka/index.php/api/";
+    public static final String BASE_URL2 = "http://192.168.100.4/api_serverkolaka/index.php/api/";
 
-    public static final String BASE_URL2 = "http://profil.smsberjaya.id/index.php/api/";
+//    public static final String BASE_URL2 = "http://profil.smsberjaya.id/index.php/api/";
 //    public static final String BASE_URL = "http://192.168.1.13/TokoVendorWeb/index.php/api/";
     public static final String GOOGLEMAP_URL = "https://maps.googleapis.com/maps/api/directions/";
-//    public static final String IMAGE_URL_PRODUK = "http://192.168.1.13/TokoVendorWeb/img/gambar/produk/";
-    public static final String IMAGE_SLIDER_URL = "http://profil.smsberjaya.id/upload/slider/";
+    public static final String IMAGE_URL = "http://192.168.100.4/ServerSekolahIDN/img/data/";
+//    public static final String IMAGE_SLIDER_URL = "http://profil.smsberjaya.id/upload/slider/";
 //    public static final String IMAGE_URL_FEED = "http://192.168.1.13/TokoVendorWeb/img/feed/";
     public static final String IMAGE_MENU_URL = "http://profil.smsberjaya.id/upload/menu/";
     public static final String IMAGE_WISATA_URL = "http://profil.smsberjaya.id/upload/wisata/";
