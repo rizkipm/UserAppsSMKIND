@@ -43,6 +43,7 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import superheroku.id.co.appuseridn.adapter.AdapterNewsHome;
 import superheroku.id.co.appuseridn.helper.Constant;
 import superheroku.id.co.appuseridn.helper.MyConstant;
 import superheroku.id.co.appuseridn.helper.No_Internet;
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else {
 
+            getListData();
             getDataMenu();
             getRunningText();
 
@@ -255,11 +257,11 @@ public class MainActivity extends AppCompatActivity
 
                         dataList = response.body().getData();
 
-                        AdapterMenu recyclerViewAdapter =
-                                new AdapterMenu(dataSlider, MenuUtamaActivity.this);
+                        AdapterNewsHome recyclerViewAdapter =
+                                new AdapterNewsHome(dataList, MainActivity.this);
 
-//                    recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setLayoutManager(new GridLayoutManager(MenuUtamaActivity.this, 3));
+                        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+//                        recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, 3));
 
                         recyclerView.setAdapter(recyclerViewAdapter);
 
