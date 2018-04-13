@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -40,6 +40,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -61,7 +62,6 @@ public class MainActivity extends AppCompatActivity
     public static List<DataItemJ134NewsHome> dataList;
 
 
-
     @BindView(R.id.flipper)
     ViewFlipper flipper;
     @BindView(R.id.txtRunning)
@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity
     ProgressBar progressBar;
     @BindView(R.id.frameDisplay)
     FrameLayout frameDisplay;
+    @BindView(R.id.btnLogin)
+    FloatingActionButton btnLogin;
 
     private boolean mIsAppFirstLaunched = true;
     AQuery aq;
@@ -147,7 +149,6 @@ public class MainActivity extends AppCompatActivity
                                             teksRunning = object.getString("isi_pengumuman");
 
                                             txtRunning.setText(" " + teksRunning);
-
 
 
                                         }
@@ -364,5 +365,9 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @OnClick(R.id.btnLogin)
+    public void onViewClicked() {
     }
 }
