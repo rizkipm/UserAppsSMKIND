@@ -23,36 +23,36 @@ public interface RestApi {
 
 
 
-    @GET("menu/json")
-    Call<RssJ134Slider> getMenuHome();
-
-    @GET("wisata/json")
-    Call<RssJ113Wisata> getMenuWisata();
-
-    @GET("getAllTipeIndikator")
-    Call<RssJ54GetAllIndikator> getAllTipeIndikator();
-
-
-    @GET("getAllInfrastruktur")
-    Call<RssJ104AllInfrastruktur> getAllInfrastruktur();
-
-    @GET("getAllProfil")
-    Call<RssJ104Profil> getAllProfil();
-
-    @GET("getAllInfoPengumuman")
-    Call<RssJ134AllPengumuman> getAllInfoPengumuman();
-
-
-    @GET("getAllPimpinan")
-    Call<RssJ104AllPimpinan> getAllPimpinan();
-
-
-    @FormUrlEncoded
-    @POST("getIndikatorByTipe")
-    Call<RssJ544IndikatorByTipe> getIndikatorByTipe(
-            @Field("id_tipe_indikator") String id_tipe_indikator
-
-    );
+//    @GET("menu/json")
+//    Call<RssJ134Slider> getMenuHome();
+//
+//    @GET("wisata/json")
+//    Call<RssJ113Wisata> getMenuWisata();
+//
+//    @GET("getAllTipeIndikator")
+//    Call<RssJ54GetAllIndikator> getAllTipeIndikator();
+//
+//
+//    @GET("getAllInfrastruktur")
+//    Call<RssJ104AllInfrastruktur> getAllInfrastruktur();
+//
+//    @GET("getAllProfil")
+//    Call<RssJ104Profil> getAllProfil();
+//
+//    @GET("getAllInfoPengumuman")
+//    Call<RssJ134AllPengumuman> getAllInfoPengumuman();
+//
+//
+//    @GET("getAllPimpinan")
+//    Call<RssJ104AllPimpinan> getAllPimpinan();
+//
+//
+//    @FormUrlEncoded
+//    @POST("getIndikatorByTipe")
+//    Call<RssJ544IndikatorByTipe> getIndikatorByTipe(
+//            @Field("id_tipe_indikator") String id_tipe_indikator
+//
+//    );
 
 
 //    @FormUrlEncoded
