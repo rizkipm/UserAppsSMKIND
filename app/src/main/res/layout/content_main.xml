@@ -28,7 +28,7 @@
                 <ViewFlipper
                     android:id="@+id/flipper"
                     android:layout_width="match_parent"
-                    android:layout_height="125dp"
+                    android:layout_height="175dp"
                     android:layout_alignParentTop="true"
                     android:layout_margin="2dp"
                     android:background="#f6f1f1" />
@@ -43,7 +43,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
-                    android:text="Explore Kolaka"
+                    android:text="Sekolah IDN"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#ffffff"
                     android:textSize="12sp"
