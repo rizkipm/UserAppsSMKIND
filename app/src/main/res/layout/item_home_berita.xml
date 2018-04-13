@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/backgroud_item"
+        card_view:cardCornerRadius="4dp"
+        tools:layout_editor_absoluteX="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="judul"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTtl"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNama"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="isi"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txtPendidikan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTtl"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="harga"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtAlamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtPendidikan"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="TextView"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtNamaIstri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAlamat"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="Masukkan Penawaran Harga"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/txtJabatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNamaIstri"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="TextView"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPeriode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtJabatan"
+
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/imgPimpinan"
+                android:text="TextView"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/imgPimpinan"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="5dp"
+
+                android:scaleType="fitXY"
+                android:src="@drawable/no_image" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
