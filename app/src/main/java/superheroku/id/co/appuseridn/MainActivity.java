@@ -11,8 +11,11 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,19 +35,29 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import superheroku.id.co.appuseridn.helper.Constant;
 import superheroku.id.co.appuseridn.helper.MyConstant;
 import superheroku.id.co.appuseridn.helper.No_Internet;
+import superheroku.id.co.appuseridn.helper.SessionManager;
 import superheroku.id.co.appuseridn.helper.VolunterHelper;
+import superheroku.id.co.appuseridn.model.Rss134NewsHome.DataItemJ134NewsHome;
+import superheroku.id.co.appuseridn.model.Rss134NewsHome.RssJ134NewsHome;
+import superheroku.id.co.appuseridn.network.MyRetrofitClient;
+import superheroku.id.co.appuseridn.network.RestApi;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int PERMISSION_WRITE_EXTERNAL_STORAGE = 100;
+    public static List<DataItemJ134NewsHome> dataList;
 
 
 
@@ -216,6 +229,55 @@ public class MainActivity extends AppCompatActivity
 //                KolakaHelper.pesan(getApplicationContext(), "Error get data");
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void getListData() {
+        try {
+            RestApi api = MyRetrofitClient.getInstanceRetrofit();
+            SessionManager sesi = new SessionManager(getApplicationContext());
+            String nUser = sesi.getIdUser();
+            Log.i("RSMUser : ", nUser);
+
+            Call<RssJ134NewsHome> call = api.getnewsHome();
+            call.enqueue(new Callback<RssJ134NewsHome>() {
+                @Override
+                public void onResponse(Call<RssJ134NewsHome> call, Response<RssJ134NewsHome> response) {
+//                    Log.d("onResponse", response.body().toString());
+
+
+                    String r = response.body().getResult();
+//                String nData = response.body().getDataProfilUSer().getLevel();
+                    Log.d("adaSlidera", response.body().toString());
+
+                    if (r.equalsIgnoreCase("true")) {
+
+
+                        dataList = response.body().getData();
+
+                        AdapterMenu recyclerViewAdapter =
+                                new AdapterMenu(dataSlider, MenuUtamaActivity.this);
+
+//                    recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setLayoutManager(new GridLayoutManager(MenuUtamaActivity.this, 3));
+
+                        recyclerView.setAdapter(recyclerViewAdapter);
+
+
+                    } else {
+
+                    }
+                }
+
+
+                @Override
+                public void onFailure(Call<RssJ134NewsHome> call, Throwable t) {
+
+                }
+            });
+
+//
+        } catch (Exception e) {
         }
     }
 

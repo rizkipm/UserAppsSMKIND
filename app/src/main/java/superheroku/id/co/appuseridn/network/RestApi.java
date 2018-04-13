@@ -6,6 +6,8 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import superheroku.id.co.appuseridn.model.Rss134NewsHome.RssJ134NewsHome;
+
 /**
  * Created by Blackswan on 9/12/2017.
  */
@@ -14,9 +16,9 @@ public interface RestApi {
 
 
 
-//    @GET("menu/json")
-//    Call<RssJ134Slider> getMenuHome();
-//
+    @GET("getAllNews")
+    Call<RssJ134NewsHome> getnewsHome();
+
 //    @GET("wisata/json")
 //    Call<RssJ113Wisata> getMenuWisata();
 //
