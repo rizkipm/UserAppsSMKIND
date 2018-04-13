@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AlphaAnimation;
 
+import com.androidquery.AQuery;
+
 
 public class BaseActivity extends AppCompatActivity {
     protected Context c;
