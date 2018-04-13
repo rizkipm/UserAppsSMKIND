@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.VisibleForTesting;
 
-import superheroku.id.co.kolakaapps.MainActivity;
+import superheroku.id.co.appuseridn.MainActivity;
 
 
 public class SessionManager extends MyFuction {
