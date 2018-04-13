@@ -8,11 +8,7 @@ package superheroku.id.co.appuseridn.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import superheroku.id.co.kolakaapps.helper.MyConstant;
-
-/**
- * Created by Blackswan on 9/12/2017.
- */
+import superheroku.id.co.appuseridn.helper.MyConstant;
 
 public class MyRetrofitClient {
     private static Retrofit getRetrofit(){

@@ -6,15 +6,6 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import superheroku.id.co.kolakaapps.modelapi.AllPengumuman.RssJ134AllPengumuman;
-import superheroku.id.co.kolakaapps.modelapi.RssJ104AllInfrastruktur.RssJ104AllInfrastruktur;
-import superheroku.id.co.kolakaapps.modelapi.RssJ104AllPimpinan.RssJ104AllPimpinan;
-import superheroku.id.co.kolakaapps.modelapi.RssJ104Profil.RssJ104Profil;
-import superheroku.id.co.kolakaapps.modelapi.RssJ113Slider.RssJ134Slider;
-import superheroku.id.co.kolakaapps.modelapi.RssJ113Wisata.RssJ113Wisata;
-import superheroku.id.co.kolakaapps.modelapi.RssJ273GetAllIndikator.RssJ54GetAllIndikator;
-import superheroku.id.co.kolakaapps.modelapi.indikatorbyId.RssJ544IndikatorByTipe;
-
 /**
  * Created by Blackswan on 9/12/2017.
  */
