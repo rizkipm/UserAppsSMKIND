@@ -21,7 +21,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/txtNama"
+                android:id="@+id/txtJudul"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imgPimpinan"
@@ -31,67 +31,22 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtTtl"
+                android:id="@+id/txtTanggalBerita"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtNama"
+                android:layout_below="@+id/txtJudul"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/imgPimpinan"
                 android:text="isi"
                 android:textSize="10sp" />
 
             <TextView
-                android:id="@+id/txtPendidikan"
+                android:id="@+id/txtSpoiler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtTtl"
-                android:layout_marginTop="2dp"
-                android:layout_toRightOf="@id/imgPimpinan"
-                android:text="harga"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtAlamat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtPendidikan"
-                android:layout_marginTop="2dp"
-                android:layout_toRightOf="@id/imgPimpinan"
-                android:text="TextView"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtNamaIstri"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtAlamat"
-                android:layout_marginTop="2dp"
-                android:layout_toRightOf="@id/imgPimpinan"
+                android:layout_alignStart="@+id/txtJudul"
+                android:layout_below="@+id/txtTanggalBerita"
                 android:text="Masukkan Penawaran Harga"
-                android:textSize="10sp" />
-
-            <TextView
-                android:id="@+id/txtJabatan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtNamaIstri"
-                android:layout_marginTop="2dp"
-                android:layout_toRightOf="@id/imgPimpinan"
-                android:text="TextView"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtPeriode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtJabatan"
-
-                android:layout_marginTop="2dp"
-                android:layout_toRightOf="@id/imgPimpinan"
-                android:text="TextView"
                 android:textSize="10sp" />
 
             <ImageView
