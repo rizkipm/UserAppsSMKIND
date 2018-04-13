@@ -1,4 +1,4 @@
-package superheroku.id.co.kolakaapps.network;
+package superheroku.id.co.appuseridn.network;
 
 
 import retrofit2.Call;
@@ -10,7 +10,6 @@ import superheroku.id.co.kolakaapps.modelapi.AllPengumuman.RssJ134AllPengumuman;
 import superheroku.id.co.kolakaapps.modelapi.RssJ104AllInfrastruktur.RssJ104AllInfrastruktur;
 import superheroku.id.co.kolakaapps.modelapi.RssJ104AllPimpinan.RssJ104AllPimpinan;
 import superheroku.id.co.kolakaapps.modelapi.RssJ104Profil.RssJ104Profil;
-import superheroku.id.co.kolakaapps.modelapi.RssJ113Menu.RssJ113Menu;
 import superheroku.id.co.kolakaapps.modelapi.RssJ113Slider.RssJ134Slider;
 import superheroku.id.co.kolakaapps.modelapi.RssJ113Wisata.RssJ113Wisata;
 import superheroku.id.co.kolakaapps.modelapi.RssJ273GetAllIndikator.RssJ54GetAllIndikator;

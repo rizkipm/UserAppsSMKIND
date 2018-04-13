@@ -13,6 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.Settings;
+import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.Log;
@@ -40,22 +41,19 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
 @SuppressLint("SimpleDateFormat")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class HeroHelper {
+public class VolunterHelper {
     private static final int DEBUG = 1;
-    public static final String APP = "ima-transfoodeApps";
-    public static final String BASE_URL = "http://profil.smsberjaya.id/index.php/api/";
-
-    //    public static final String BASE_URL = "http://layanan-awan.com/absen/absen_android/index.php/Api/";
-    //    public static final String BASE_URL = "http://admin.transfood-batam.com/index.php/API/";
-    public static final String BASE_URL_IMAGE = "http://layanan-awan.com/absen/absen_android/uploads/";
-    public static final String BASE_URL_IMAGE_PROFILE = "http://layanan-awan.com/absen/absen_android/photo_profile/";
-    public static final String BASE_URL_UPLOAD = "http://layanan-awan.com/absen/absen_android/";
+    public static final String APP = "ima-volunterwonder";
+    public static final String BASE_URL = "http://api.imadeveloper.web.id/wonder_projects/";
+    public static final String GOOGLEMAP_URL = "https://maps.googleapis.com/maps/api/directions/";
+    public static final String BASE_URL_IMAGE = "http://192.168.100.9/ServerKolaka/img/";
 
 
     public static void alert(Context context, String title, String message) {
@@ -80,6 +78,7 @@ public class HeroHelper {
 
 
     }
+
 
 
     public static String convertStreamToString(InputStream is) throws Exception {
@@ -170,7 +169,7 @@ public class HeroHelper {
         DateFormat formatter1 = new SimpleDateFormat("yyyyMMdd_HHmmss");
 
         Date now = new Date();
-        HeroHelper.pre("tgl simpan: " + formatter1.format(now));
+        VolunterHelper.pre("tgl simpan: " + formatter1.format(now));
         return formatter1.format(now);
     }
 
@@ -300,66 +299,6 @@ public class HeroHelper {
         }
     }
 
-    public static File resizeImage(File f) {
-        try {
-            //decode image size
-            BitmapFactory.Options o = new BitmapFactory.Options();
-            o.inJustDecodeBounds = true;
-            BitmapFactory.decodeStream(new FileInputStream(f), null, o);
-
-            //Find the correct scale value. It should be the power of 2.
-            final int REQUIRED_SIZE = 200;
-            int width_tmp = o.outWidth, height_tmp = o.outHeight;
-            int scale = 1;
-            while (true) {
-                if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE)
-                    break;
-                width_tmp /= 2;
-                height_tmp /= 2;
-                scale *= 2;
-            }
-
-            //decode with inSampleSize
-            BitmapFactory.Options o2 = new BitmapFactory.Options();
-            o2.inSampleSize = scale;
-            Bitmap bitmap = BitmapFactory.decodeStream(new FileInputStream(f), null, o2);
-
-            OutputStream outStream = null;
-            String namaFilex = f.getAbsolutePath().substring(f.getAbsolutePath().lastIndexOf("/") + 1);
-            String ektensi = HeroHelper.getExtension(f);
-            String filename = HeroHelper.tglJamSekarangFile() + "." + ektensi;
-            HeroHelper.pre("nama file " + filename);
-            File sdCardDirectory = new File(Environment
-                    .getExternalStorageDirectory() + File.separator + "projectMonitoring");
-            sdCardDirectory.mkdirs();
-            File file = new File(sdCardDirectory, filename);
-
-//            if (file.exists()) {
-//                file.delete();
-//                file = new File(Environment
-//                        .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), filename + ".png");
-//                Log.e("file exist", "" + file + ",Bitmap= " + filename);
-//            }
-            try {
-
-
-                outStream = new FileOutputStream(file);
-                bitmap.compress(Bitmap.CompressFormat.PNG, 40, outStream);
-                outStream.flush();
-                outStream.close();
-                bitmap.recycle();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            Log.e("file", "" + file.toString());
-            return file;
-
-
-        } catch (FileNotFoundException e) {
-        }
-        return null;
-    }
-
     public static boolean isBatasTanggal(EditText etText, int batas) {
         String a = etText.getText().toString();
         Date usia = strTodate(a);
@@ -400,7 +339,6 @@ public class HeroHelper {
             return true;
         }
     }
-
 
     // untuk check koneksi internet
     public static boolean isOnline(ConnectivityManager cm) {
@@ -589,24 +527,6 @@ public class HeroHelper {
     }
 
     public static String getDeviceId(Context context) {
-
-//        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-//                    && context.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
-//                    != PackageManager.PERMISSION_GRANTED
-//                    ) {
-//                Activity activity = (Activity) context;
-//                activity.requestPermissions(
-//                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
-//                                Manifest.permission.ACCESS_FINE_LOCATION},
-//                        110);
-//
-//
-//            }
-//            return ;
-//        }
-
-
         final String deviceId = ((TelephonyManager) context
                 .getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
         if (deviceId != null) {
@@ -616,34 +536,24 @@ public class HeroHelper {
         }
     }
 
-//    public static String getDeviceUUID(Context context) {
-//        final TelephonyManager tm = (TelephonyManager) context
-//                .getSystemService(Context.TELEPHONY_SERVICE);
-//
-//        final String tmDevice, tmSerial, androidId;
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            return TODO;
-//        }
-//        tmDevice = "" + tm.getDeviceId();
-//        tmSerial = "" + tm.getSimSerialNumber();
-//        androidId = ""
-//                + Secure.getString(context.getContentResolver(),
-//                Secure.ANDROID_ID);
-//
-//        String deviceMobileNo = tm.getLine1Number();
-//
-//        UUID deviceUuid = new UUID(androidId.hashCode(),
-//                ((long) tmDevice.hashCode() << 32) | tmSerial.hashCode());
-//        return deviceUuid.toString();
-//
-//    }
+    public static String getDeviceUUID(Context context) {
+        final TelephonyManager tm = (TelephonyManager) context
+                .getSystemService(Context.TELEPHONY_SERVICE);
+
+        final String tmDevice, tmSerial, androidId;
+        tmDevice = "" + tm.getDeviceId();
+        tmSerial = "" + tm.getSimSerialNumber();
+        androidId = ""
+                + Secure.getString(context.getContentResolver(),
+                Secure.ANDROID_ID);
+
+        String deviceMobileNo = tm.getLine1Number();
+
+        UUID deviceUuid = new UUID(androidId.hashCode(),
+                ((long) tmDevice.hashCode() << 32) | tmSerial.hashCode());
+        return deviceUuid.toString();
+
+    }
 
     public static void alert(Context context, String title, String message,
                              Boolean status) {

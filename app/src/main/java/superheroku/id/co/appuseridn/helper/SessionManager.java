@@ -1,4 +1,4 @@
-package superheroku.id.co.kolakaapps.helper;
+package superheroku.id.co.appuseridn.helper;
 
 import android.content.Context;
 import android.content.Intent;
@@ -143,7 +143,7 @@ public class SessionManager extends MyFuction {
         hideProgressDialog();
     }
 
-    public  String password, address, id_akses, email_user,pekerjaan,tgl_create, last_name,hp_user,id_user,first_name ;
+    public String password, address, id_akses, email_user,pekerjaan,tgl_create, last_name,hp_user,id_user,first_name ;
 
 
     public String getPassword() {
