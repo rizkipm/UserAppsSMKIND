@@ -141,7 +141,7 @@ public class AdapterNewsHome extends RecyclerView.Adapter<AdapterNewsHome.MyHold
             txtPendidikan = (TextView) itemView.findViewById(R.id.txtSpoiler);
             imgPimpinan = (ImageView) itemView.findViewById(R.id.imgPimpinan);
 //
-            card = itemView.findViewById(R.id.card_view);
+            card = itemView.findViewById(R.id.cardHome);
 
 
 
