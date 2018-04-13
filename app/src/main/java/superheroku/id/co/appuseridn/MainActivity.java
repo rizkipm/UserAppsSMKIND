@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity
         // clear data sebelumnya
 
         //ambil data dari server
-        String url = VolunterHelper.BASE_URL + "getAllInfoPengumuman";
+        String url = VolunterHelper.BASE_URL + "getPengumuman";
         Map<String, String> parampa = new HashMap<>();
         try {
             //mencari url dan parameter yang dikirimkan
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity
                                         for (int a = 0; a < jsonArray.length(); a++) {
                                             HashMap<String, String> dataMap = new HashMap<>();
                                             JSONObject object = jsonArray.getJSONObject(a);
-                                            teksRunning = object.getString("info");
+                                            teksRunning = object.getString("isi_pengumuman");
 
                                             txtRunning.setText(" " + teksRunning);
 
