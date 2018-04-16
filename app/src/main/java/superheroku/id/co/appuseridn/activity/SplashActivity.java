@@ -6,12 +6,22 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
+import com.wang.avi.AVLoadingIndicatorView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import superheroku.id.co.appuseridn.MainActivity;
 import superheroku.id.co.appuseridn.R;
 
 
 public class SplashActivity extends AppCompatActivity {
+
+    @BindView(R.id.avi)
+    AVLoadingIndicatorView avi;
+    @BindView(R.id.lv_loading)
+    LinearLayout lvLoading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +30,10 @@ public class SplashActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash);
+        ButterKnife.bind(this);
+
+        avi= (AVLoadingIndicatorView) findViewById(R.id.avi);
+        avi.setIndicator("BallClipRotatePulseIndicator");
 
         final Handler handler = new Handler();
 
@@ -33,6 +47,6 @@ public class SplashActivity extends AppCompatActivity {
 
 
             }
-        }, 2000L);
+        }, 5000L);
     }
 }
