@@ -44,7 +44,7 @@ public class AdapterPrestasi extends RecyclerView.Adapter<AdapterPrestasi.MyHold
 
     @Override
     public void onBindViewHolder(MyHolder holder, final int position) {
-        holder.txtNama.setText(" " +  data.get(position).getNamaPrestasi());
+        holder.txtNama.setText("" +  data.get(position).getNamaPrestasi());
         holder.txtFasilitas.setText("Kategori : " + data.get(position).getNamaKategoriLomba());
 
         Glide.with(c)

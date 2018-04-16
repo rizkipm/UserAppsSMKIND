@@ -41,6 +41,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.KontakActivity"
             android:label="Kontak"></activity>
+
+        <activity android:name=".activity.MenuPrestasiActivity"
+            android:label="Prestasi Sekolah"></activity>
     </application>
 
 </manifest>

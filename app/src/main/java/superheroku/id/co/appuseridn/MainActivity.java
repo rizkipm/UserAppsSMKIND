@@ -46,6 +46,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import superheroku.id.co.appuseridn.activity.KontakActivity;
 import superheroku.id.co.appuseridn.activity.LoginActivity;
+import superheroku.id.co.appuseridn.activity.MenuPrestasiActivity;
 import superheroku.id.co.appuseridn.activity.ProfilSekolahActivity;
 import superheroku.id.co.appuseridn.adapter.AdapterNewsHome;
 import superheroku.id.co.appuseridn.helper.Constant;
@@ -364,6 +365,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(a1);
         }else if (id == R.id.nav_profil) {
             Intent a1 = new Intent(getApplicationContext(), ProfilSekolahActivity.class);
+            startActivity(a1);
+        }else if (id == R.id.nav_prestasi) {
+            Intent a1 = new Intent(getApplicationContext(), MenuPrestasiActivity.class);
             startActivity(a1);
         }
 //
