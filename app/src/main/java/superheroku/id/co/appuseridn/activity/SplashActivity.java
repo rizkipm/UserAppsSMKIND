@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         avi= (AVLoadingIndicatorView) findViewById(R.id.avi);
-        avi.setIndicator("BallClipRotatePulseIndicator");
+        avi.setIndicator("BallPulseSyncIndicator");
 
         final Handler handler = new Handler();
 

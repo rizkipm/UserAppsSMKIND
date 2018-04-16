@@ -5,33 +5,42 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="Home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_gallery_sekolah"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Galeri" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_profil"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Profil Sekolah" />
+        <item
+            android:id="@+id/nav_prestasi"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Prestasi" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_info_sekolah"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Info Sekolah" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="More">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_partners"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Partners" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_kontak"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Kontak" />
+            <item
+                android:id="@+id/nav_lokasi"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Lokasi" />
+
         </menu>
     </item>
 
