@@ -44,6 +44,9 @@
 
         <activity android:name=".activity.MenuPrestasiActivity"
             android:label="Prestasi Sekolah"></activity>
+
+        <activity android:name=".activity.MenuPartnersActivity"
+            android:label="Partners Sekolah"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import superheroku.id.co.appuseridn.model.Rss134NewsHome.RssJ134NewsHome;
+import superheroku.id.co.appuseridn.model.RssGet164Partners.RssJ164GetAllPartners;
 import superheroku.id.co.appuseridn.model.RssJ164GetAllPrestasi.RssJ164GetAllPrestasi;
 
 /**
@@ -22,6 +23,9 @@ public interface RestApi {
 
     @GET("getPrestasi")
     Call<RssJ164GetAllPrestasi> getPrestasi();
+
+    @GET("getPartners")
+    Call<RssJ164GetAllPartners> getPartners();
 
 //    @GET("wisata/json")
 //    Call<RssJ113Wisata> getMenuWisata();
