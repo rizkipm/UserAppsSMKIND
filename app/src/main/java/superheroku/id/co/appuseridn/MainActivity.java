@@ -44,7 +44,9 @@ import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import superheroku.id.co.appuseridn.activity.KontakActivity;
 import superheroku.id.co.appuseridn.activity.LoginActivity;
+import superheroku.id.co.appuseridn.activity.ProfilSekolahActivity;
 import superheroku.id.co.appuseridn.adapter.AdapterNewsHome;
 import superheroku.id.co.appuseridn.helper.Constant;
 import superheroku.id.co.appuseridn.helper.HeroHelper;
@@ -357,8 +359,13 @@ public class MainActivity extends AppCompatActivity
             Intent a1 = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(a1);
             finish();
+        } else if (id == R.id.nav_kontak) {
+            Intent a1 = new Intent(getApplicationContext(), KontakActivity.class);
+            startActivity(a1);
+        }else if (id == R.id.nav_profil) {
+            Intent a1 = new Intent(getApplicationContext(), ProfilSekolahActivity.class);
+            startActivity(a1);
         }
-//        } else if (id == R.id.nav_gallery) {
 //
 //        } else if (id == R.id.nav_slideshow) {
 //
