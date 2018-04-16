@@ -39,7 +39,8 @@
             android:name=".activity.ProfilSekolahActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.KontakActivity"></activity>
+        <activity android:name=".activity.KontakActivity"
+            android:label="Kontak"></activity>
     </application>
 
 </manifest>
