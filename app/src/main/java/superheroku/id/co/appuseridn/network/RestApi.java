@@ -7,6 +7,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import superheroku.id.co.appuseridn.model.Rss134NewsHome.RssJ134NewsHome;
+import superheroku.id.co.appuseridn.model.RssJ164GetAllPrestasi.RssJ164GetAllPrestasi;
 
 /**
  * Created by Blackswan on 9/12/2017.
@@ -18,6 +19,9 @@ public interface RestApi {
 
     @GET("getAllNews")
     Call<RssJ134NewsHome> getnewsHome();
+
+    @GET("getPrestasi")
+    Call<RssJ164GetAllPrestasi> getPrestasi();
 
 //    @GET("wisata/json")
 //    Call<RssJ113Wisata> getMenuWisata();
