@@ -13,7 +13,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import superheroku.id.co.appuseridn.MainActivity;
-
+import superheroku.id.co.appuseridn.R;
 
 
 public class SplashActivity extends AppCompatActivity {
