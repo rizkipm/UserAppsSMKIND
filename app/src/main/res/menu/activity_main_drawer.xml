@@ -6,23 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/house"
             android:title="Home" />
+        <item
+            android:id="@+id/nav_profil"
+            android:icon="@drawable/about"
+            android:title="Profil Sekolah" />
         <item
             android:id="@+id/nav_gallery_sekolah"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Galeri" />
-        <item
-            android:id="@+id/nav_profil"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Profil Sekolah" />
+
         <item
             android:id="@+id/nav_prestasi"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/prize"
             android:title="Prestasi" />
         <item
             android:id="@+id/nav_info_sekolah"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/new"
             android:title="Info Sekolah" />
     </group>
 
@@ -30,15 +31,15 @@
         <menu>
             <item
                 android:id="@+id/nav_partners"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/partners"
                 android:title="Partners" />
             <item
                 android:id="@+id/nav_kontak"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/contract"
                 android:title="Kontak" />
             <item
                 android:id="@+id/nav_lokasi"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/placeholder"
                 android:title="Lokasi" />
 
         </menu>
