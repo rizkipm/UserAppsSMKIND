@@ -23,7 +23,7 @@
             android:title="Prestasi" />
         <item
             android:id="@+id/nav_info_sekolah"
-            android:icon="@drawable/new"
+            android:icon="@drawable/info"
             android:title="Info Sekolah" />
     </group>
 
