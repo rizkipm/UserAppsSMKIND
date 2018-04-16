@@ -44,8 +44,10 @@ import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import superheroku.id.co.appuseridn.activity.LoginActivity;
 import superheroku.id.co.appuseridn.adapter.AdapterNewsHome;
 import superheroku.id.co.appuseridn.helper.Constant;
+import superheroku.id.co.appuseridn.helper.HeroHelper;
 import superheroku.id.co.appuseridn.helper.MyConstant;
 import superheroku.id.co.appuseridn.helper.No_Internet;
 import superheroku.id.co.appuseridn.helper.SessionManager;
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity
         // clear data sebelumnya
 
         //ambil data dari server
-        String url = VolunterHelper.BASE_URL + "getPengumuman";
+        String url = HeroHelper.BASE_URL + "getPengumuman";
         Map<String, String> parampa = new HashMap<>();
         try {
             //mencari url dan parameter yang dikirimkan
@@ -146,7 +148,8 @@ public class MainActivity extends AppCompatActivity
                                         for (int a = 0; a < jsonArray.length(); a++) {
                                             HashMap<String, String> dataMap = new HashMap<>();
                                             JSONObject object = jsonArray.getJSONObject(a);
-                                            teksRunning = object.getString("isi_pengumuman");
+                                            teksRunning = object.getString("info");
+//                                            teksRunning = object.getString("isi_pengumuman");
 
                                             txtRunning.setText(" " + teksRunning);
 
@@ -369,5 +372,9 @@ public class MainActivity extends AppCompatActivity
 
     @OnClick(R.id.btnLogin)
     public void onViewClicked() {
+
+        Intent a1 = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(a1);
+
     }
 }
